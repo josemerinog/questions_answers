@@ -1,0 +1,26 @@
+<% provide(:title, 'Respuestas Contundentes Q&A - Registrarse') %>
+<h1>Formulario de Registro</h1>
+<%= form_for(@user) do |f| %>
+	<%= render "form_errors" %>
+
+	<p>
+		<%= f.label :Username, "Usuario" %> <br />
+		<%= f.text_field :Username %>
+	</p>
+
+	<p>
+		<%= f.label :password, "Password" %> <br />
+		<%= f.password_field :password %>
+	</p>
+
+	<p>
+		<%= f.label :password_confirmation, "Confirmar" %> <br />
+		<%= f.password_field :password_confirmation %>
+	</p>
+
+	<p>
+		<%= f.submit "Registrarse" %>
+	</p>
+
+
+<% end %>
