@@ -183,9 +183,20 @@ body .pagination {
 				<li>
 					<%= link_to 'Inicio', root_path %>
 				</li>
-        <li>
-          <%= link_to 'Registro', new_user_path %>
-        </li>
+        <% if logged_in? %>
+          <li>
+            <%= link_to "Cerrar Sesión (#{current_user.username})", '#' %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Registro', new_user_path %>
+          </li>  
+          <li>
+            <%= link_to 'Iniciar Sesión', new_session_path %>
+          </li>  
+        <% end %>
+
+        
 			</ul>
 		</div> <!-- end nav -->
 		<div id="content">
