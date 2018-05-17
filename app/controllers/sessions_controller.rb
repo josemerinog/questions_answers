@@ -9,8 +9,15 @@ class SessionsController < ApplicationController
   		flash[:success] = 'Sesión Iniciada correctamente!'
   		redirect_to root_url
   	else
-  		flash.now[:error] = 'La combinación usuario/password fue incorrecta.'
+  		flash.now[:error] = 'Combinación usuario/password incorrecta.'
   		render 'new'
   	end
   end
+
+  def destroy
+  	session[:user_id] = nil
+  	redirect_to root_url, notice: 'Sesión Cerrada correctamente'
+  end
+
+
 end

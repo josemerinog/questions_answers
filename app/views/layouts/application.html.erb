@@ -185,14 +185,14 @@ body .pagination {
 				</li>
         <% if logged_in? %>
           <li>
-            <%= link_to "Cerrar Sesión (#{current_user.username})", '#' %>
+            <%= link_to "Cerrar Sesión (#{current_user.username})", logout_path, method: 'delete' %>
           </li>
         <% else %>
           <li>
-            <%= link_to 'Registro', new_user_path %>
+            <%= link_to 'Registro', register_path %>
           </li>  
           <li>
-            <%= link_to 'Iniciar Sesión', new_session_path %>
+            <%= link_to 'Iniciar Sesión', login_path %>
           </li>  
         <% end %>
 
