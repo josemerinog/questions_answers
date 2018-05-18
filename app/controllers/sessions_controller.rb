@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   	user = User.find_by_username(params[:session][:username])
   	if user && user.authenticate(params[:session][:password])
   		login user
-  		flash[:success] = 'Sesión Iniciada correctamente!'
+  		flash[:success] = 'Has iniciado Sesión!'
   		redirect_to root_url
   	else
   		flash.now[:error] = 'Combinación usuario/password incorrecta.'
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
   	session[:user_id] = nil
-  	redirect_to root_url, notice: 'Sesión Cerrada correctamente'
+  	redirect_to root_url, notice: 'Su sesión ha terminado!'
   end
 
 

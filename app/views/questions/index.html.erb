@@ -1,2 +1,12 @@
 <%= provide(:title, 'Respuestas Contundentes Q&A') %>
-<p>Home Page</p>
+<div id="ask">
+	<h1>¿Quién Contesta mi pregunta?</h1>	
+	<% if logged_in? %>
+		<%= render "questions_form" %>
+	<% else %>
+		<br />
+		<p> => Debes iniciar sesión para poder hacer preguntas.</p>
+	<% end %>
+
+
+</div> <!-- end ask -->
