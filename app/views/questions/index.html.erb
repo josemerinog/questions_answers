@@ -7,6 +7,18 @@
 		<br />
 		<p> => Inicia sesión para poder hacer o contestar preguntas.</p>
 	<% end %>
-
-
 </div> <!-- end ask -->
+<div id="questions">
+	<h1>Lista de Preguntas Disponibles:</h1>
+	<br />
+	<% if @questions.any? %>
+		<ul>
+			<%= render @questions %> -->
+		</ul>
+		<br />
+		<%= will_paginate %>
+	<% else %>
+		<br />
+		<p>No hay preguntas publicadas disponibles.</p>
+	<% end %>
+</div> <!-- end questions -->

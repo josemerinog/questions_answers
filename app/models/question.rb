@@ -11,10 +11,18 @@
 #
 
 class Question < ApplicationRecord
-  attr_accessor :body, :solved
+  #attr_accessor :body, :solved
   belongs_to :user
 
   validates :body, presence: true, length: {in: 10..255}
   # validates :solved, inclusion: {in: [true, false]}
+
+	self.per_page = 3
+
+  def self.unsolved(params)
+  	where(solved: false).paginate(page: params[:page]).order('created_at DESC')
+  	#where(solved: false).paginate(page: params[:page].order('created_at DESC')
+  	#.page(params[:page]).order('created_at DESC')
+  end
 
 end
