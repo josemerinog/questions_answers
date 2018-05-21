@@ -13,7 +13,7 @@
 	<br />
 	<% if @questions.any? %>
 		<ul>
-			<%= render @questions %> -->
+			<%= render @questions, partial: "questions/question" %> 
 		</ul>
 		<br />
 		<%= will_paginate %>
