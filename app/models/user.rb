@@ -19,4 +19,12 @@ class User < ApplicationRecord
 								format: { with: /\A[a-z][a-z0-9*\z]/, message: 'Unicamente letras minúsculas y números.'}
 	validates :password, length: { in: 4..8 } 
 	validates :password_confirmation, length: { in: 4..8 } 
+
+
+	self.per_page = 3
+	
+	def mis_preguntas(params)
+		questions.paginate(page: params[:page]).order('created_at DESC')
+		
+	end
 end

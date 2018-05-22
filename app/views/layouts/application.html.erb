@@ -184,6 +184,7 @@ body .pagination {
 					<%= link_to 'Inicio', root_path %>
 				</li>
         <% if logged_in? %>
+          <%= link_to 'Mis Preguntas', mis_preguntas_path %>
           <li>
             <%= link_to "Cerrar Sesión (#{current_user.username})", logout_path, method: 'delete' %>
           </li>

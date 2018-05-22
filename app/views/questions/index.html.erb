@@ -10,12 +10,10 @@
 </div> <!-- end ask -->
 <div id="questions">
 	<h1>Lista de Preguntas Disponibles:</h1>
-	<br />
 	<% if @questions.any? %>
 		<ul>
 			<%= render @questions, partial: "questions/question" %> 
 		</ul>
-		<br />
 		<%= will_paginate %>
 	<% else %>
 		<br />
