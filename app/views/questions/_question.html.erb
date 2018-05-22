@@ -1,3 +1,7 @@
 <li>
 	<%= link_to truncate(question.body, length: 35), question %> - Publicada por: <%= question.user.username.capitalize %>
+
+	<% if on_your_questions_page? %>
+		<%= display_solved(question) %>	- <%= link_to 'Editar', edit_question_path(question) %>
+	<% end %>
 </li>

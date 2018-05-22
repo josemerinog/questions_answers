@@ -1,0 +1,18 @@
+<% provide(:title, 'Editar mis Preguntas') %>
+<h1>
+	Editar mis Preguntas
+</h1>
+<%= form_for(@question) do |f| %>
+	<%= render 'form_errors', object: @question %>
+	<p>
+		<%= f.label :body, "Pregunta: " %> <br />
+		<%= f.text_field :body %>
+	</p>
+	<p>
+		<%= f.label :solved, "Resuelta: " %> 
+		<%= f.check_box :solved %>
+	</p>
+	<p>
+		<%= f.submit "Actualizar" %>
+	</p>
+<% end %>
