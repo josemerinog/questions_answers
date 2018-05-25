@@ -6,6 +6,20 @@
 	<%= @question.body %>
 </p>
 
+<div id="answers">
+	<h2>Respuestas: </h2>
+	
+	<% if @question.answers.any? %>
+		<ul>
+			<%= render @question.answers %>
+		</ul>
+	<% else %>
+		<p>Esta pregunta todavía no tiene respuestas. </p>
+	<% end %>
+
+
+</div> <!-- end answers -->
+
 <div id="post-answer">
 	<h2>Responde esta Pregunta: </h2>
 		
