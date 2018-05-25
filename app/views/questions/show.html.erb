@@ -5,3 +5,15 @@
 <p>
 	<%= @question.body %>
 </p>
+
+<div id="post-answer">
+	<h2>Responde esta Pregunta: </h2>
+		
+	<% if logged_in? %>
+		<%= render 'answers/answer_form' %>
+	<% else %>
+		<p>Por favor Inicie sesión para publicar una respuesta para esta pregunta.</p>
+	<% end %>
+
+
+</div> <!-- end post-answer -->

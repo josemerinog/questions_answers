@@ -11,6 +11,7 @@
 
 class User < ApplicationRecord
 	has_many :questions
+	has_many :answers
 	# attr_accessor :username, :password, :password_confirmation
 	has_secure_password
 
@@ -22,7 +23,7 @@ class User < ApplicationRecord
 
 
 	self.per_page = 3
-	
+
 	def mis_preguntas(params)
 		questions.paginate(page: params[:page]).order('created_at DESC')
 		
