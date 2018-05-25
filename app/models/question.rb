@@ -26,4 +26,9 @@ class Question < ApplicationRecord
   	#.page(params[:page]).order('created_at DESC')
   end
 
+  def self.search(params)
+    where("body LIKE ?", "%#{params[:keyword]}%").paginate(page: params[:page]).order('created_at DESC')
+    
+  end
+
 end
